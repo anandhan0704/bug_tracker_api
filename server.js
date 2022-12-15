@@ -11,7 +11,7 @@ wss.on('connection', ws => {
 
   ws.addEventListener("open", (message) => {
         console.log("We are connected");
-        ws.emit(message);
+        ws.emit('message',message);
       });
 })
 

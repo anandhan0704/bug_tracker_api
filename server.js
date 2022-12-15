@@ -7,7 +7,7 @@ wss.on('connection', ws => {
   ws.onmessage = (message) => {
     console.log(message);
   };
-  ws.send('Hello! Message From Server!!', `${message}`)
+  ws.send('Hello! Message From Server!!')
 })
 
 console.log("Server connected on 8080")

@@ -1,6 +1,6 @@
 const WebSocket = require('ws');
 var port = 8080;
-const wss = new WebSocket.Server({ "port": port });
+const wss = new WebSocket.Server({ "port": 8080 });
 
 // Broadcast to all.
 wss.broadcast = function broadcast(data) {
@@ -19,4 +19,4 @@ wss.on('connection', function connection(ws) {
   });
 });
 
-console.log((new Date()) + ' Server is listening on port 8080');
+console.log("Server connected on 8080")

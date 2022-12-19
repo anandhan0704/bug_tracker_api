@@ -3,7 +3,6 @@
 let WSServer = require('ws').Server;
 let server = require('http').createServer();
 let app = require('./http-server');
-require('dotenv').config();
 
 // Create web socket server on top of a regular http server
 let wss = new WSServer({

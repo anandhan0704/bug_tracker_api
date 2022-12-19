@@ -7,7 +7,6 @@ let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 let WSServer = require('ws').Server;
 let server = require('http').createServer();
-require('dotenv').config();
 
 // Let's create the regular HTTP request and response
 app.get('/', function(req, res) {

@@ -11,8 +11,9 @@ app.use(bodyParser.json());
 app.get('/', function(req, res) {
 
   console.log('Get index');
-  fs.createReadStream('./index.html')
-  .pipe(res);
+  return res.json({
+    answer: 34
+  });
 });
 
 app.post('/', function(req, res) {
@@ -21,7 +22,7 @@ app.post('/', function(req, res) {
   console.log('Regular POST message: ', message);
   return res.json({
 
-    answer: 42
+    answer: message
   });
 });
 

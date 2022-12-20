@@ -18,12 +18,16 @@ wss.on('connection', function connection(ws) {
   ws.on('message', function incoming(message) {
     
     console.log(`received: ${message}`);
+    
     ws.send(JSON.stringify({
+
       answer: 42
     }));
   });
 });
 
+
 server.listen(8080, function() {
+
   console.log(`http/ws server listening on 8080`);
 });

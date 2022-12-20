@@ -19,9 +19,7 @@ document.body.onload = function() {
   // First the socket requesta
   function socketExample() {
     console.log('Creating socket');
-    let socket = new WebSocket('ws://localhost:3025/');
-    socket.binaryData = "blob";
-    socket.binaryType = "arraybuffer";
+    let socket = new WebSocket('ws://localhost:8080/');
     socket.onopen = function() {
 
       console.log('Socket open.');
@@ -31,8 +29,7 @@ document.body.onload = function() {
     socket.onmessage = function(message) {
 
       console.log('Socket server message', message);
-      let data = JSON.stringify(message.data);
-      console.log(JSON.parse(data))
+      let data = JSON.parse(message.data);
       document.getElementById('response').innerHTML = JSON.stringify(data, null, 2);
     };
   }
@@ -50,10 +47,10 @@ document.body.onload = function() {
       body: JSON.stringify({message: 'What is the meaning of post-life, the universe and everything?'})  
     })
     .then(response => response.json())  
-    .then(function (message) {  
+    .then(function (data) {  
     
-      console.log('POST response:', message);
-      document.getElementById('post-response').innerHTML = JSON.stringify(message, null, 2);   
+      console.log('POST response:', data);
+      document.getElementById('post-response').innerHTML = JSON.stringify(data, null, 2);   
     })  
     .catch(function (error) {  
       console.log('Request failed', error);  
